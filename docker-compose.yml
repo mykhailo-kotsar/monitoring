@@ -16,9 +16,10 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_SECURITY_ADMIN_PASSWORD=YOUR_PASSWORD
     volumes:
       - grafana-data:/var/lib/grafana
+      - ./provisioning:/etc/grafana/provisioning
     restart: always
 
   node-exporter:
@@ -27,6 +28,3 @@ services:
     ports:
       - "9100:9100"
     restart: always
-
-volumes:
-  grafana-data:
